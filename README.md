@@ -2,6 +2,8 @@
 
 ![Auralis Travel desktop preview](./auralis-desktop.png)
 
+**Live Demo:** [auralistravel.vercel.app](https://auralistravel.vercel.app/)
+
 Auralis Travel is a polished travel discovery and booking interface built with Next.js, React, TypeScript, Tailwind CSS, and Framer Motion. It presents curated destinations, local guide profiles, signature tours, itinerary planning, smart destination search, cart creation, and a frontend-only checkout flow in a single responsive experience.
 
 The project focuses on a premium travel-planning user journey: a visitor can search for a location such as Bali, Istanbul, Ankara, Antalya, Palawan, Algarve, or Sardinia; select dates and travelers through custom UI pickers; view matching destinations; add a trip to the cart; and continue to a simulated payment screen.
