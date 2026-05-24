@@ -222,20 +222,6 @@ npm run lint
 | `lib/data.ts` | Typed static content and travel data |
 | `tailwind.config.ts` | Theme colors, fonts, radii, and shadows |
 
-## Screenshots
-
-### Desktop
-
-![Auralis Travel desktop](./auralis-desktop.png)
-
-### Mobile
-
-![Auralis Travel mobile](./auralis-mobile.png)
-
-### Testimonials
-
-![Auralis Travel testimonial section](./auralis-testimonial.png)
-
 ## Current Scope
 
 This repository is a frontend implementation. The following features are currently simulated in the UI:
