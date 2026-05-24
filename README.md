@@ -1,6 +1,6 @@
 # Auralis Travel
 
-![Auralis Travel desktop preview](./auralis-desktop.png)
+![Auralis Travel desktop preview](./photo.png)
 
 **Live Demo:** [auralistravel.vercel.app](https://auralistravel.vercel.app/)
 
