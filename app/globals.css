@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #111827;
+  background: #fafaf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(249, 115, 22, 0.08), transparent 26rem),
+    linear-gradient(180deg, #ffffff 0%, #fafaf8 42%, #ffffff 100%);
+  color: #111827;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.2);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-pad {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-auralis-orange focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+}
