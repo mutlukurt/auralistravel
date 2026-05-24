@@ -43,3 +43,38 @@ button {
 .focus-ring {
   @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-auralis-orange focus-visible:ring-offset-2 focus-visible:ring-offset-white;
 }
+
+@keyframes auralis-float-up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes auralis-float-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+.auralis-float-slow {
+  animation: auralis-float-up 5s ease-in-out infinite;
+}
+
+.auralis-float-slower {
+  animation: auralis-float-down 5.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auralis-float-slow,
+  .auralis-float-slower {
+    animation: none;
+  }
+}

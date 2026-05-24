@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { Menu, Plane, X } from "lucide-react";
 import { useState } from "react";
 import { AuthModal } from "./AuthModal";
@@ -19,12 +18,6 @@ const navLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "signup" | null>(null);
-  const { scrollY } = useScroll();
-  const background = useTransform(
-    scrollY,
-    [0, 80],
-    ["rgba(255,255,255,0.72)", "rgba(255,255,255,0.9)"],
-  );
 
   const navigateToSection = (id: string) => {
     setOpen(false);
@@ -43,13 +36,7 @@ export function Header() {
 
   return (
     <>
-      <motion.header
-        className="fixed left-0 right-0 top-0 z-50 border-b border-white/60 backdrop-blur-xl"
-        style={{ background }}
-        initial={{ opacity: 0, y: -24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      >
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/60 bg-white/85 backdrop-blur-xl transition-colors">
         <nav className="container-pad flex h-20 items-center justify-between">
         <button
           className="focus-ring flex items-center gap-3 rounded-full"
@@ -106,15 +93,8 @@ export function Header() {
         </button>
       </nav>
 
-      <AnimatePresence>
         {open ? (
-          <motion.div
-            className="container-pad pb-5 lg:hidden"
-            initial={{ opacity: 0, y: -16, height: 0 }}
-            animate={{ opacity: 1, y: 0, height: "auto" }}
-            exit={{ opacity: 0, y: -16, height: 0 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="container-pad pb-5 lg:hidden">
             <div className="rounded-3xl border border-auralis-border bg-white p-4 shadow-soft">
               <div className="grid gap-1">
                 {navLinks.map((link) => (
@@ -151,10 +131,9 @@ export function Header() {
                 </button>
               </div>
             </div>
-          </motion.div>
+          </div>
         ) : null}
-      </AnimatePresence>
-      </motion.header>
+      </header>
       <AuthModal mode={authMode} onClose={() => setAuthMode(null)} onModeChange={setAuthMode} />
     </>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   CalendarDays,
@@ -186,12 +185,7 @@ export function SearchBar({ fields, compact = false }: SearchBarProps) {
   };
 
   return (
-    <motion.div
-      ref={wrapperRef}
-      initial={{ opacity: 0, y: 22 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.36, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div ref={wrapperRef}>
       <form
         className={`relative grid w-full gap-3 rounded-[1.6rem] border border-auralis-border bg-white p-3 shadow-soft ${
           compact ? "lg:grid-cols-[repeat(4,minmax(0,1fr))_auto]" : "sm:grid-cols-[1fr_1fr_auto]"
@@ -237,7 +231,6 @@ export function SearchBar({ fields, compact = false }: SearchBarProps) {
                 </span>
               </button>
 
-              <AnimatePresence>
                 {isOpen ? (
                   <>
                     <button
@@ -246,14 +239,10 @@ export function SearchBar({ fields, compact = false }: SearchBarProps) {
                       aria-label="Close picker"
                       onClick={() => setOpenField(null)}
                     />
-                    <motion.div
+                    <div
                       className={`fixed inset-x-4 bottom-5 z-[100] max-h-[78vh] w-auto overflow-auto rounded-[1.35rem] border border-auralis-border bg-white p-3 shadow-soft sm:absolute sm:bottom-auto sm:left-0 sm:mt-3 sm:max-h-none sm:w-[min(88vw,24rem)] sm:overflow-hidden ${
                         compact && field.label === "Check Out" ? "lg:right-0 lg:left-auto" : ""
                       }`}
-                      initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                      transition={{ duration: 0.18 }}
                     >
                       {type === "location" ? (
                         <LocationPicker
@@ -289,22 +278,19 @@ export function SearchBar({ fields, compact = false }: SearchBarProps) {
                           }}
                         />
                       ) : null}
-                    </motion.div>
+                    </div>
                   </>
                 ) : null}
-              </AnimatePresence>
             </div>
           );
         })}
-        <motion.button
+        <button
           className="focus-ring inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-auralis-orange px-6 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:shadow-xl"
           type="submit"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.98 }}
         >
           Get Started
           <ArrowRight className="h-4 w-4" aria-hidden />
-        </motion.button>
+        </button>
       </form>
 
       {status !== "idle" ? (
@@ -329,7 +315,7 @@ export function SearchBar({ fields, compact = false }: SearchBarProps) {
           )}
         </div>
       ) : null}
-    </motion.div>
+    </div>
   );
 }
 
