@@ -303,7 +303,7 @@ export const experiences: Experience[] = [
     location: "Aegean Coast",
     duration: "5 days",
     price: "$690",
-    image: "/images/experience-sailing-food.png",
+    image: "/images/experience-sailing-food.webp",
     alt: "Mediterranean sailing harbor with a local food table at golden hour",
     tags: ["Sailing", "Cuisine", "Small group"],
     description:
@@ -316,7 +316,7 @@ export const experiences: Experience[] = [
     location: "Marrakech Medina",
     duration: "3 nights",
     price: "$520",
-    image: "/images/experience-old-city-food.png",
+    image: "/images/experience-old-city-food.webp",
     alt: "Lantern-lit historic old city street with cafe tables at blue hour",
     tags: ["Culture", "Guided", "Evening"],
     description:
@@ -399,7 +399,7 @@ export const journalArticles: JournalArticle[] = [
     title: "A Quiet Alpine Retreat For Slow Mornings And Clear Air",
     category: "Wellness",
     readTime: "4 min read",
-    image: "/images/journal-alpine-retreat.png",
+    image: "/images/journal-alpine-retreat.webp",
     alt: "Mountain lodge terrace with tea and morning mist over an alpine valley",
   },
   {

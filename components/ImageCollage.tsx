@@ -49,7 +49,7 @@ export function ImageCollage() {
             src={image.src}
             alt={image.alt}
             fill
-            priority={index < 2}
+            priority={index === 0}
             sizes="(max-width: 768px) 46vw, 280px"
             className="object-cover transition duration-700 group-hover:scale-105"
           />

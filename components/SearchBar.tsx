@@ -20,7 +20,7 @@ import type { LucideIcon } from "lucide-react";
 export interface SearchField {
   label: string;
   value: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
 }
 
 interface SearchBarProps {
@@ -205,6 +205,8 @@ export function SearchBar({ fields, compact = false }: SearchBarProps) {
               ? formatDate(values[field.label]) || field.value
               : values[field.label] || field.value;
           const isOpen = openField === field.label;
+          const Icon =
+            field.icon ?? (type === "person" ? UsersRound : type === "date" ? CalendarDays : MapPin);
 
           return (
             <div className={`relative ${isOpen ? "z-50" : "z-10"}`} key={field.label}>
@@ -221,7 +223,7 @@ export function SearchBar({ fields, compact = false }: SearchBarProps) {
                 }}
               >
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-auralis-peach text-auralis-orange transition group-hover:scale-105">
-                  <field.icon className="h-5 w-5" aria-hidden />
+                  <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-bold text-auralis-dark">{field.label}</span>

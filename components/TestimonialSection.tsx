@@ -53,7 +53,7 @@ export function TestimonialSection() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
-          src="/images/testimonial-mosaic.png"
+          src="/images/testimonial-mosaic-optimized.webp"
           alt="Mosaic travel photograph of a woman in a boat on calm turquoise water"
           fill
           sizes="(max-width: 768px) 94vw, 760px"
